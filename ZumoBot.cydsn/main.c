@@ -57,11 +57,23 @@
 // Hello World!
 void zmain(void)
 {
-    printf("\nHello, World!\n");
+   motor_start();              // enable motor controller
+    motor_forward(0,0);         // set speed to zero to stop motors
 
-    while(true)
+    vTaskDelay(3000);
+    
+    motor_forward(100,2000);     // moving forward
+    motor_turn(200,50,2000);     // turn
+    motor_turn(50,200,2000);     // turn
+    motor_backward(100,2000);    // moving backward
+     
+    motor_forward(0,0);         // stop motors
+
+    motor_stop();               // disable motor controller
+    
+    for(;;)
     {
-        vTaskDelay(100); // sleep (in an infinite loop)
+
     }
  }   
 #endif
