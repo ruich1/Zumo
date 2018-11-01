@@ -1,25 +1,51 @@
 void zmain(void)
 {
-    int x;
-    for(x=0; x<3; x++) {
-        BatteryLed_Write(1);
-        vTaskDelay(500);
-        BatteryLed_Write(0);
-        vTaskDelay(500);
+    printf("\nHello, World!\n");
+    
+        int i;
+        for(i=0;i<3;i++)
+        {
+     BatteryLed_Write(1);
+    vTaskDelay(500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+        }
+        for (i=0;i<3;i++)
+        {
+    BatteryLed_Write(1);
+    vTaskDelay(1500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
     }
-    for(x=0; x<3; x++) {
-        BatteryLed_Write(1);
-        vTaskDelay(1500);
-        BatteryLed_Write(0);
-        vTaskDelay(500);
+    for(i=0;i<3;i++)
+        {
+     BatteryLed_Write(1);
+    vTaskDelay(500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+        }
+     for (i=0;i<3;i++)
+    {
+    BatteryLed_Write(1);
+    vTaskDelay(1500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
     }
-    for(x=0; x<3; x++) {
-        BatteryLed_Write(1);
-        vTaskDelay(500);
-        BatteryLed_Write(0);
-        vTaskDelay(500);
-    }
- }   
+    
+         motor_start();              // enable motor controller
+    motor_forward(0,0);         // set speed to zero to stop motors
+
+    vTaskDelay(50);
+    
+    motor_forward(100,2000);     // moving forward
+    motor_turn(200,50,2000);     // turn
+    motor_turn(50,200,2000);     // turn
+    motor_backward(100,2000);    // moving backward
+     
+    motor_forward(0,0);         // stop motors
+        vTaskDelay(100); // sleep (in an infinite loop)
     
     
     #define coeff 25/4095/3;/* code number from 0 to max read 4095,ADC read 3 of 5 of the total resistance */
@@ -36,31 +62,18 @@ void zmain(void)
         printf("%d\n",volatge);
         if (volatge<=4)
         
-        { BatteryLed_Write(1);
+        { uint8_t State=0;
+     BatteryLed_Write(State);
     vTaskDelay(500);
-    BatteryLed_Write(0);
+     State= ~State;  
+    
+    
+   uint8_t States=0,lenth=0;
+    Beep(States,lenth);
     vTaskDelay(500);
-    BatteryLed_Write(1);
-    vTaskDelay(500);
-    BatteryLed_Write(0);
-    vTaskDelay(500);
-    BatteryLed_Write(1);
-    vTaskDelay(500);
-    BatteryLed_Write(0);
-    vTaskDelay(500);
-   
-    Beep(100,100);
-    vTaskDelay(500);
-    Beep(100,100);
-    vTaskDelay(500);
-    Beep(100,100);
-    vTaskDelay(500);
-    Beep(100,100);
-    vTaskDelay(500);
-    Beep(100,100);
-    vTaskDelay(500);
-    Beep(100,100);
-    vTaskDelay(500);
+    States= ~States;
+    lenth=~lenth;
+    
         }
     else if(volatge>4)
     {
@@ -69,29 +82,3 @@ void zmain(void)
    
     }
     
-    motor_start();
-
-
-    while(true)
-    {
-         motor_start();              // enable motor controller
-    motor_forward(0,0);         // set speed to zero to stop motors
-
-    vTaskDelay(50);
-    
-    motor_forward(100,2000);     // moving forward
-    motor_turn(200,50,2000);     // turn
-    motor_turn(50,200,2000);     // turn
-    motor_backward(100,2000);    // moving backward
-     
-    motor_forward(0,0);         // stop motors
-        vTaskDelay(100); // sleep (in an infinite loop)
-       
-    }
-    
-        
-   
-   
-   
-   
-    }   
