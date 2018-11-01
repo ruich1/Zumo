@@ -1,44 +1,25 @@
 void zmain(void)
 {
-    printf("\nHello, World!\n");
-    {
-     BatteryLed_Write(1);
-    vTaskDelay(500);
-    BatteryLed_Write(0);
-    vTaskDelay(500);
-    BatteryLed_Write(1);
-    vTaskDelay(500);
-    BatteryLed_Write(0);
-    vTaskDelay(500);
-    BatteryLed_Write(1);
-    vTaskDelay(500);
-    BatteryLed_Write(0);
-    vTaskDelay(500);
-    BatteryLed_Write(1);
-    vTaskDelay(1500);
-    BatteryLed_Write(0);
-    vTaskDelay(500);
-    BatteryLed_Write(1);
-    vTaskDelay(1500);
-    BatteryLed_Write(0);
-    vTaskDelay(500);
-    BatteryLed_Write(1);
-    vTaskDelay(1500);
-    BatteryLed_Write(0);
-    vTaskDelay(500);
-    BatteryLed_Write(1);
-    vTaskDelay(500);
-    BatteryLed_Write(0);
-    vTaskDelay(500);
-    BatteryLed_Write(1);
-    vTaskDelay(500);
-    BatteryLed_Write(0);
-    vTaskDelay(500);
-    BatteryLed_Write(1);
-    vTaskDelay(500);
-    BatteryLed_Write(0);
-    vTaskDelay(500);
+    int x;
+    for(x=0; x<3; x++) {
+        BatteryLed_Write(1);
+        vTaskDelay(500);
+        BatteryLed_Write(0);
+        vTaskDelay(500);
     }
+    for(x=0; x<3; x++) {
+        BatteryLed_Write(1);
+        vTaskDelay(1500);
+        BatteryLed_Write(0);
+        vTaskDelay(500);
+    }
+    for(x=0; x<3; x++) {
+        BatteryLed_Write(1);
+        vTaskDelay(500);
+        BatteryLed_Write(0);
+        vTaskDelay(500);
+    }
+ }   
     
     
     #define coeff 25/4095/3;/* code number from 0 to max read 4095,ADC read 3 of 5 of the total resistance */
