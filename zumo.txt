@@ -1,0 +1,116 @@
+void zmain(void)
+{
+    printf("\nHello, World!\n");
+    {
+     BatteryLed_Write(1);
+    vTaskDelay(500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(1500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(1500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(1500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    }
+    
+    
+    #define coeff 25/4095/3;/* code number from 0 to max read 4095,ADC read 3 of 5 of the total resistance */
+    UART_1_Start();
+    ADC_Battery_Start();
+    ADC_Battery_StartConvert();
+    int16_t value=0, volatge;
+    printf("BETTRY.\n");
+    for(;;)
+    {
+       ADC_Battery_IsEndConversion(ADC_Battery_WAIT_FOR_RESULT);/* For the bettry */
+        value =ADC_Battery_GetResult16();
+        volatge = value*coeff;
+        printf("%d\n",volatge);
+        if (volatge<=4)
+        
+        { BatteryLed_Write(1);
+    vTaskDelay(500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+   
+    Beep(100,100);
+    vTaskDelay(500);
+    Beep(100,100);
+    vTaskDelay(500);
+    Beep(100,100);
+    vTaskDelay(500);
+    Beep(100,100);
+    vTaskDelay(500);
+    Beep(100,100);
+    vTaskDelay(500);
+    Beep(100,100);
+    vTaskDelay(500);
+        }
+    else if(volatge>4)
+    {
+        vTaskDelay(100); // sleep (in an infinite loop)
+    }
+   
+    }
+    
+    motor_start();
+
+
+    while(true)
+    {
+         motor_start();              // enable motor controller
+    motor_forward(0,0);         // set speed to zero to stop motors
+
+    vTaskDelay(50);
+    
+    motor_forward(100,2000);     // moving forward
+    motor_turn(200,50,2000);     // turn
+    motor_turn(50,200,2000);     // turn
+    motor_backward(100,2000);    // moving backward
+     
+    motor_forward(0,0);         // stop motors
+        vTaskDelay(100); // sleep (in an infinite loop)
+       
+    }
+    
+        
+   
+   
+   
+   
+    }   
