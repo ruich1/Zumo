@@ -58,12 +58,49 @@
 void zmain(void)
 {
     printf("\nHello, World!\n");
+    
+    BatteryLed_Write(1);
+    vTaskDelay(500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(1500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(1500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(1500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
+    BatteryLed_Write(1);
+    vTaskDelay(500);
+    BatteryLed_Write(0);
+    vTaskDelay(500);
 
-    while(true)
+    while(false)
     {
         vTaskDelay(100); // sleep (in an infinite loop)
     }
- }   
+ }      
 #endif
 
 #if 0
