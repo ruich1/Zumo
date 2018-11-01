@@ -1,0 +1,6 @@
+C:\Users\yangy\OneDrive\Documents\GitHub\Zumo\ZumoBot.cydsn\ZumoBot.cyprj|046aa962-21e4-4240-ae87-9a7e1aa850ea
+C:\Tools\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f6f3837b-a92e-4a4b-baf4-609be8e7b69a
+C:\Users\yangy\OneDrive\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|bfb74d11-0185-40d8-ab93-5b624a18ad5e
+C:\Tools\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|6f5b54e2-96a6-47d1-9098-43bdab5f2400
+C:\Tools\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|161da38c-a8ab-47a5-bc78-d01ccb8cafe3
+C:\Tools\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|36f43c11-678e-495c-ba27-f668be91ef8d
